@@ -12,12 +12,6 @@
         "laravel/tinker": "^2.8",
         "nwidart/laravel-modules": "@dev"
     },
-    "repositories": [
-        {
-          "type": "path",
-          "url": "../../packages/laravel-modules"
-        }
-    ],
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
