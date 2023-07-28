@@ -6,6 +6,7 @@ use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\ModuleManager\Entities\Modulemanagermodel;
+use Nwidart\Modules\Facades\Module;
 
 class ModuleManagerController extends Controller
 {
@@ -83,12 +84,13 @@ class ModuleManagerController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function moduleDelete($id)
+    public function moduleDelete($id, $moduleName)
     {
-        if (!empty($id)) {
-            if (Modulemanagermodel::where('id', $id)->delete()) {
+        if (!empty($id) && !empty($moduleName)) {
+            if (Module::delete($moduleName) && Modulemanagermodel::where('id', $id)->delete()) {
                 return redirect()->route('all_modules');
             }
+            return redirect()->route('all_modules');
         }
     }
 }
