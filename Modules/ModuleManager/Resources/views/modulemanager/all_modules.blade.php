@@ -23,7 +23,7 @@
 					<div class="row mt-5 text-end">
 						<div class="col-md-6"></div>
 						<div class="col-md-6">
-							<a href="{{ route('modulemanager.module_delete', $module['id']) }}" class="btn btn-danger btn-sm">Delete</a>
+							<a href="{{ route('modulemanager.module_delete', ['id' => $module['id'], 'name' => $module['name']]) }}" class="btn btn-danger btn-sm">Delete</a>
 							@php
 							$btncolor = ($module['is_active'] == '1' ? 'warning' : 'success');
 							$btnname = ($module['is_active'] == '1' ? 'Disable' : 'Enable');
