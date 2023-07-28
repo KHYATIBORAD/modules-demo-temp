@@ -30,8 +30,30 @@ class CreateModulesTable extends Migration
             $table->integer('priority')->default(0);
             $table->nullableTimestamps();
         });
+        /**
+         * Insert ModuleManager Module into Database.
+         */
+        // DB::table('modules')->insert(
+        //     array(
+        //         'id' => 1,
+        //         'name' => 'ModuleManager',
+        //         'path' => base_path().'/Modules/ModuleManager',
+        //         'alias' => 'modulemanager',
+        //         'version' => '1.0.0',
+        //         'description' => 'This Module for Module Management',
+        //         'keywords' => '[]',
+        //         'is_active' => 1,
+        //         'order' => 0,
+        //         'providers' => '["Modules\\\\ModuleManager\\\\Providers\\\\ModuleManagerServiceProvider"]',
+        //         'aliases' => null,
+        //         'files' => null,
+        //         'requires' => '[]',
+        //         'priority' => 0,
+        //         'created_at' => null,
+        //         'updated_at' => null
+        //     )
+        // );
     }
-
     /**
      * Reverse the migrations.
      *
