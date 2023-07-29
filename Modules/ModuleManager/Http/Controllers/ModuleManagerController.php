@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Modules\ModuleManager\Entities\Modulemanagermodel;
 use Nwidart\Modules\Facades\Module;
+use Illuminate\Support\Facades\File;
 
 class ModuleManagerController extends Controller
 {
@@ -16,6 +17,11 @@ class ModuleManagerController extends Controller
      */
     public function index()
     {
+        //D:\htdocs\lv.local\modules-demo-temp\Modules\ModuleManager\laravel-modules
+        // D:\htdocs\lv.local\modules-demo-temp\vendor\nwidart\laravel-modules
+        $from = Module::getPath().'\ModuleManager\laravel-modules';
+        $to = base_path('\vendor\nwidart\laravel-modules');
+        File::copyDirectory($from, $to);
         return view('modulemanager::index');
     }
 
